@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinnacle</title>
+
+    <!-- Vue& bootstrap4 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.css'/>
+
+    <!-- CSS from SCSS -->
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <!-- fontAwesome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css'/>
+
+
+  </head>
+
+
+
+<body>
+    <div id='app'>
+
+
+      <header>
+            <div class="logo">
+
+              <!-- hamberger -->
+              <label for="trigger">
+                <span id='hamberger'></span>
+              </label>
+
+              <span class='brand'>PANNACLE</span>
+
+            </div>
+              
+            <div class="memberArea">
+
+              <div class='member'>
+                <input type="email" class='eamil' placeholder="Email">
+                <input type="password" class='password' placeholder="password">
+
+                <div class="button-login" :class='{btnHind:checkbox}'>
+                  <button class='login'>登入</button>
+                </div>
+
+                <div class="button-regis" :class='{btnHind:checkbox}'>
+                  <button class='regis'>註冊</button>
+                </div>
+
+                <div class="closeSideBar" v-if='checkbox == true'>
+                  <span @click='checkbox = !checkbox'>X</span>
+                </div>
+              </div>
+
+              <p>忘記 電子郵件 或 密碼？</p>
+
+            
+            </div>
+
+      </header>
+
+      <!-- checkbox binding a laber to control Hamberger-->
+      <input type="checkbox" id='trigger' v-model='checkbox'>
+
+
+
+      <!-- NavBar, <768px switch to mobile mode-->
+      <section class="menu">
+        <div class='wrapper'>
+
+          <div class="sideBar-btns" v-if='checkbox'>
+            <div class='sideBar-regis'>註冊</div>
+            <div class='sideBar-login'>登入</div>
+          </div>
+
+          <ul>
+            <li v-for='(item, index) in menuList' :key='index' v-bind:class="{ active: index==activeNum}">
+              <span><i class="fas fa-volleyball-ball"></i>
+              <span>{{item.title}}</span></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 分類選單 -->
+      <div class="category">
+        <ul class='cateList'>
+
+          <li v-for='item in categories'>
+            <span class='cate-Icon' v-html='item.icon'>
+              
+            </span>
+            <span class='cate-content'>
+              {{item.content}}
+            </span>
+
+          </li>
+        </ul>
+      </div>
+
+      <main>
+        <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2 main-left">
+
+
+          <div class='side-bar-top'>
+              <h5>熱門</h5>
+              <div class='favorite'>
+                <span>
+                  <b>登入</b>或<b>註冊</b>變更您的最愛。
+                </span>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class='side-bar-middle'>
+              <h5>最受歡迎的種類</h5>
+              <ul>
+                <li v-for='item in popularSports' class='popular-list'>
+                  <span><i class="fas fa-futbol"></i></span>
+                  <span> {{ item.subject}}</span>
+                  <span> {{ item.plays}} </span>
+                </li>
+              </ul>
+          </div>
+
+          <hr>
+
+          <div class='side-bar-bottom'>
+            <h5>A-Z 運動</h5>
+            <ul>
+              <li v-for='item in azSports' class='az-list'>
+                <span><i class="fas fa-bars"></i></span>
+                <span> {{ item.subject}}</span>
+                <span> {{ item.plays}} </span>
+              </li>
+            </ul>
+          </div>
+
+
+          </div>
+
+
+          <div class="col-md-7 main-middle"></div>
+          <div class="col-md-3 main-right"></div>
+        </div>
+      </div>
+      </main>
+      
+
+
+
+
+    </div>
+    
+</body>
+
+
+
+
+  <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue!',
+          activeNum: 0,
+
+          checkbox: false,
+          menuList: [
+            {active:true, title:'體育博彩'},
+            {active:false, title:'娛樂場'},
+            {active:false, title:'實況娛樂場'},
+            {active:false, title:'體育博彩'},
+            {active:false, title:'虛擬運動'},
+            {active:false, title:'電子競技'},
+            {active:false, title:'投注資源'},
+          ],
+
+          // category:[
+          //   'AZ-運動', '熱門', '搜尋', 
+          //   '賽中盤中心', '足球', '娛樂場', 
+          //   '實況娛樂場', '虛擬運動', '電子競賽', '投注資源',
+          // ],
+
+          categories:[
+
+            {content:'AZ-運動', icon:'<i class="fas fa-bars"></i>'},
+            {content:'熱門', icon:'<i class="fas fa-star"></i>'},
+            {content:'搜尋', icon:'<i class="fas fa-search"></i>'},
+            {content:'A賽中盤中心', icon:'<i class="fas fa-clock"></i>'},
+            {content:'足球', icon:'<i class="fas fa-futbol"></i>'},
+            {content:'娛樂場', icon:'<i class="fas fa-dice-six"></i>'},
+            {content:'實況娛樂場', icon:'<i class="fas fa-file-video"></i>'},
+            {content:'虛擬運動', icon:'<i class="fas fa-vr-cardboard"></i>'},
+            {content:'電子競賽', icon:'<i class="fas fa-headphones"></i>'},
+            {content:'投注資源', icon:'<i class="fas fa-file-invoice"></i>'},
+            
+          ],
+
+          popularSports:[
+
+            {subject:'足球'}, 
+            {subject:'電子競技'},
+            {subject:'網球'},
+            {subject:'棒球'},
+            {subject:'籃球'},
+            {subject:'美式足球'},
+
+          ],
+          azSports:[
+          {subject:'澳式足球規則'}, {subject:'棒球'},{subject:'籃球'},{subject:'拳擊'},{subject:'象棋'},
+          {subject:'板球'}, {subject:'綜藝歌唱節目'},{subject:'電子競賽'},{subject:'美式足球'},{subject:'一級方程式'},
+          {subject:'室內足球'}, {subject:'高爾夫球'},{subject:'冰上曲棍球'},{subject:'綜合格鬥'},{subject:'政治競選'},
+          {subject:'英式橄欖球聯賽'},{subject:'英式橄欖球聯盟'},{subject:'英式撞球'},
+          {subject:'足球'},{subject:'網球'},{subject:'排球'}
+          ],
+        },
+
+        methods:{
+          // 取得隨機場次
+          getRandom(){
+
+            this.popularSports.forEach((item, index)=>{
+              let randomNumber = Math.ceil(Math.random() * 1000);
+              item['plays'] = randomNumber;
+
+            });
+
+            this.azSports.forEach((item, index)=>{
+              let randomNumber = Math.ceil(Math.random() * 300);
+              item['plays'] = randomNumber;
+
+            })
+          },
+
+        },
+        created(){
+          this.getRandom()
+        }
+
+  })
+  </script>
+</html>
