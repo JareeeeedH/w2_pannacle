@@ -243,8 +243,8 @@ input:checked ~ .menu{
 }
 
 main{
-    // padding: 1rem 0rem;
-    // background: #f1f3f7;
+    padding: 1rem 1rem;
+    background: #f1f3f7;
 
     .main-left{
         color: $mainColor;
@@ -317,12 +317,27 @@ main{
             }
         }
     }
+
+    .main-middle{
+        img{
+            width: 100%;
+        }
+
+        .gamgin-title{
+            color: black;
+            div{
+                border: 1px solid black;
+            }
+        }
+
+        .place-area{
+            color: black;
+        }
+
+
+
+    }
  
-
-
-    // .side-bar-top{
-
-    // }
 
 }
 
