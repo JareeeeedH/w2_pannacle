@@ -105,7 +105,10 @@
       <main>
         <div class="container-fluid">
         <div class="row">
-          <div class="col-md-2 main-left">
+
+
+          <!-- 側邊欄 "d-none d-md-block" by Bootstrap -->
+          <div class="d-none d-md-block col-md-2 main-left">
 
 
           <div class='side-bar-top'>
@@ -153,67 +156,98 @@
               <img src="https://www.pinnacle.com/Cms_Data/Contents/Guestzhtw/Media/1AFFI/update/UWebsite-Desktop-Generic-USP-banner-CH-TR.jpg" alt="messi Photo">
             </div>
 
+            <!-- 行動版才出現的盤口選單 -->
+            <div class="mobile-menu">
+              <div>賽中盤</div>
+              <div>精華</div>
+            </div>
+
             <div class="playing-games">
 
-              <div><h6>體育博彩-賽中盤</h6></div>
+              <div class='gaming-main-title'><h6>體育博彩-賽中盤</h6></div>
 
               <div class='playing-menu'>
-                <div>O足球</div><div>O足球</div><div>O足球</div>
+
+                  <div class='playing-category category-active'>
+                    <i class="fas fa-futbol"></i><span>  足球</span>
+                  </div>
+
+                  <div class='playing-category'>
+                    <i class="fas fa-futbol"></i><span>  足球</span>
+                  </div>
+
+                  <div class='playing-category'>
+                    <i class="fas fa-futbol"></i><span>  足球</span>
+                  </div>
               </div>
 
               <ul class='play-list'>
-                <li>
 
-                  <div class="row gamgin-title">
+                <li>
+                  <div class="gamging-title">
                     <div class="col-md-3">歐洲足協 - 歐羅巴聯賽</div>
-                    <div class="col-md-3">1X2</div>
+                    <div class="col-md-3">
+                      <span>1</span><span>X</span><span>2</span>
+                    </div>
                     <div class="col-md-3">讓分盤</div>
-                    <div class="col-md-3">大盤 小盤</div>
+                    <div class="col-md-3">
+                      <span>大盤</span>
+                      <span>小盤</span>
+                    </div>
                   </div>
 
-                  <div class="row place-area">
+                  <div class="place-area">
                     <div class="col-md-3">
 
-                      <div>
-                        <span>流浪者</span>
-                        <span>0</span>
-                      </div>
-                      <div>
-                        <span>藝大師</span>
-                        <span>0</span>
-                      </div>
-                      <div>上半場-46'</div>
+                      <div class='team-area'>
+                        <div class="team-1">
+                          <span class='t1-name'>流浪者</span>
+                          <span class='t1-score'>6</span>
+                        </div>
 
-                    </div>
+                        <div class="team-2">
+                          <span class='t2-name'>洛杉磯湖人</span>
+                          <span class='t2-score'>3</span>
+                        </div>
 
-                    <div class="col-md-3">
-                      <button>1.560</button>
-                      <button>5.000</button>
-                      <button>1.242</button>
-                    </div>
+                        <div class='playing-time'>上半場-46'</div>
 
-                    <div class="col-md-3">
-
-                      <div>
-                        <span>+1.5</span>
-                        <span>1.925</span>
-                      </div>
-
-                      <div>
-                        <span>+1.5</span>
-                        <span>1.925</span>
-                      </div>
-
-                      <div>
-                        ^
                       </div>
 
                     </div>
 
+                    <!-- 賠率 -->
+                    <div class="col-md-3 odds-area">
+                      <div><button>1.560</button></div>
+                      <div><button>5.000</button></div>
+                      <div><button>1.242</button></div>
+                    </div>
 
-                    <div class="col-md-3">
+                    <!-- 讓分 -->
+                    <div class="col-md-3 cent-area">
 
-                      <div class="col-md-3">
+                      <div>
+                        <div class='cent-score'>
+                          <span>+1.5</span>
+                          <span>1.925</span>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class='cent-score'>
+                          <span>+1.5</span>
+                          <span>1.925</span>
+                        </div>
+                      </div>
+
+                      <div>
+                        <img src="./arrow.png" alt="">
+                      </div>
+
+                    </div>
+
+
+                    <div class="col-md-3 big-small-area">
 
                         <div>
                           <span>+1.5</span>
@@ -226,31 +260,200 @@
                         </div>
   
                         <div>
-                          |
+                          <img src="./arrow.png" alt="">
                         </div>
 
                         <div>
                           +31>
                         </div>
-  
-                      </div>
 
+                    </div>
+
+                  </div>
+
+                </li>
+
+                <li>
+                  <div class="gamging-title">
+                    <div class="col-md-3">歐洲足協 - 歐羅巴聯賽</div>
+                    <div class="col-md-3">
+                      <span>1</span><span>X</span><span>2</span>
+                    </div>
+                    <div class="col-md-3">讓分盤</div>
+                    <div class="col-md-3">
+                      <span>大盤</span>
+                      <span>小盤</span>
                     </div>
                   </div>
 
+                  <div class="place-area">
+                    <div class="col-md-3">
+
+                      <div class='team-area'>
+                        <div class="team-1">
+                          <span class='t1-name'>流浪者</span>
+                          <span class='t1-score'>6</span>
+                        </div>
+
+                        <div class="team-2">
+                          <span class='t2-name'>洛杉磯湖人</span>
+                          <span class='t2-score'>3</span>
+                        </div>
+
+                        <div class='playing-time'>上半場-46'</div>
+
+                      </div>
+
+                    </div>
+
+                    <!-- 賠率 -->
+                    <div class="col-md-3 odds-area">
+                      <div><button>1.560</button></div>
+                      <div><button>5.000</button></div>
+                      <div><button>1.242</button></div>
+                    </div>
+
+                    <!-- 讓分 -->
+                    <div class="col-md-3 cent-area">
+
+                      <div>
+                        <div class='cent-score'>
+                          <span>+1.5</span>
+                          <span>1.925</span>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class='cent-score'>
+                          <span>+1.5</span>
+                          <span>1.925</span>
+                        </div>
+                      </div>
+
+                      <div>
+                        <img src="./arrow.png" alt="">
+                      </div>
+
+                    </div>
 
 
+                    <div class="col-md-3 big-small-area">
 
+                        <div>
+                          <span>+1.5</span>
+                          <span>1.925</span>
+                        </div>
+  
+                        <div>
+                          <span>+1.5</span>
+                          <span>1.925</span>
+                        </div>
+  
+                        <div>
+                          <img src="./arrow.png" alt="">
+                        </div>
 
-                  
+                        <div>
+                          +31>
+                        </div>
 
+                    </div>
 
-
-
-
-
+                  </div>
 
                 </li>
+
+                <li>
+                  <div class="gamging-title">
+                    <div class="col-md-3">歐洲足協 - 歐羅巴聯賽</div>
+                    <div class="col-md-3">
+                      <span>1</span><span>X</span><span>2</span>
+                    </div>
+                    <div class="col-md-3">讓分盤</div>
+                    <div class="col-md-3">
+                      <span>大盤</span>
+                      <span>小盤</span>
+                    </div>
+                  </div>
+
+                  <div class="place-area">
+                    <div class="col-md-3">
+
+                      <div class='team-area'>
+                        <div class="team-1">
+                          <span class='t1-name'>流浪者</span>
+                          <span class='t1-score'>6</span>
+                        </div>
+
+                        <div class="team-2">
+                          <span class='t2-name'>洛杉磯湖人</span>
+                          <span class='t2-score'>3</span>
+                        </div>
+
+                        <div class='playing-time'>上半場-46'</div>
+
+                      </div>
+
+                    </div>
+
+                    <!-- 賠率 -->
+                    <div class="col-md-3 odds-area">
+                      <div><button>1.560</button></div>
+                      <div><button>5.000</button></div>
+                      <div><button>1.242</button></div>
+                    </div>
+
+                    <!-- 讓分 -->
+                    <div class="col-md-3 cent-area">
+
+                      <div>
+                        <div class='cent-score'>
+                          <span>+1.5</span>
+                          <span>1.925</span>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div class='cent-score'>
+                          <span>+1.5</span>
+                          <span>1.925</span>
+                        </div>
+                      </div>
+
+                      <div>
+                        <img src="./arrow.png" alt="">
+                      </div>
+
+                    </div>
+
+
+                    <div class="col-md-3 big-small-area">
+
+                        <div>
+                          <span>+1.5</span>
+                          <span>1.925</span>
+                        </div>
+  
+                        <div>
+                          <span>+1.5</span>
+                          <span>1.925</span>
+                        </div>
+  
+                        <div>
+                          <img src="./arrow.png" alt="">
+                        </div>
+
+                        <div>
+                          +31>
+                        </div>
+
+                    </div>
+
+                  </div>
+
+                </li>
+
+
               </ul>
 
 
@@ -260,7 +463,66 @@
 
 
           </div>
-          <div class="col-md-3 main-right"></div>
+
+
+          <!-- 下注起來 -->
+          <div class="d-none d-md-block col-md-3 main-right">
+            <div class="wrapper-order">
+
+              <div class="order-header">
+                <h6>注單</h6>
+              </div>
+
+              <div class='order-nav'>
+                <ul>
+                  <li>單注</li>
+                  <li>多重投注</li>
+                  <li>優惠過關盤</li>
+                </ul>
+              </div>
+
+              <div class="order-content">
+
+                <div class="orders">
+                  <div class="each-order">.</div>
+                  <div class="each-order">.</div>
+                  <div class="each-order">.</div>
+                </div>
+
+                <div class="warning-text">
+                  <p>您的彩票沒有注碼。</p>
+                  <p>點擊賠率以新增投注。</p>
+                </div>
+
+                <div class="order-footer">
+
+                  <div class='total-bet'>
+                    <div>總注金</div>
+                    <div>EUR 0.00</div>
+                  </div>
+  
+                  <div class='total-win'>
+                    <div>總彩金</div>
+                    <div>EUR 0.00</div>
+                  </div>
+  
+                  <div class="order-button">
+                    登入並投注
+                  </div>
+  
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class='img-container'>
+              <img src="./asiaWeb.jpg" alt="AsiaWevside">
+            </div>
+          </div>
+
+    
+
         </div>
       </div>
       </main>
@@ -284,6 +546,7 @@
           activeNum: 0,
 
           checkbox: false,
+
           menuList: [
             {active:true, title:'體育博彩'},
             {active:false, title:'娛樂場'},
@@ -293,12 +556,6 @@
             {active:false, title:'電子競技'},
             {active:false, title:'投注資源'},
           ],
-
-          // category:[
-          //   'AZ-運動', '熱門', '搜尋', 
-          //   '賽中盤中心', '足球', '娛樂場', 
-          //   '實況娛樂場', '虛擬運動', '電子競賽', '投注資源',
-          // ],
 
           categories:[
 
@@ -332,6 +589,52 @@
           {subject:'英式橄欖球聯賽'},{subject:'英式橄欖球聯盟'},{subject:'英式撞球'},
           {subject:'足球'},{subject:'網球'},{subject:'排球'}
           ],
+
+          PEInfo:[
+            '體育博彩', '足球博彩', '籃球博彩', '棒球博彩', '美式足球博彩','網球博彩', '冰上曲棍球博彩','電子競技博彩'
+          ],
+
+          AboutInfo:[
+            '關於Pinnacle(畢諾克)','企業','報導','合作夥伴','B2B','加入','為何選擇innacle(畢諾克)'
+          ],
+
+          PolicyInfo:[
+            '政策','責任博彩', '條款和條件', '隱私權政策', 'Cookie政策'
+          ],
+
+          SourceInfo:['聯絡我們', '博彩規則', '說明', '系統狀態', '網站地圖', '付款選項'],
+
+          SocialInfo:['Facebook', 'Twitter', 'Linkedin', 'Youtube', 'Apple Podcast', 'Spotify', 'Soundcloud'],
+
+          footerImgs:[
+            "https://www.pinnacle.com/img/payments/solid/visa.png",
+            "https://www.pinnacle.com/img/payments/solid/master-card.png",
+            "https://www.pinnacle.com/img/payments/solid/skrill.png",
+            "https://www.pinnacle.com/img/payments/solid/neteller.png",
+            "https://www.pinnacle.com/img/payments/solid/idebit.png",
+            "https://www.pinnacle.com/img/payments/solid/web-money.png",
+            "https://www.pinnacle.com/img/payments/solid/instant-banking.png",
+            "https://www.pinnacle.com/img/payments/solid/eco-payz.png",
+            "https://www.pinnacle.com/img/payments/solid/e-cheque.svg",
+            "https://www.pinnacle.com/img/payments/solid/instadebit.png",
+            "https://www.pinnacle.com/img/payments/solid/pay-safe-card.png",
+            "https://www.pinnacle.com/img/payments/solid/bank-transfer.svg",
+            "https://www.pinnacle.com/img/payments/solid/local-transfer.svg",
+            "https://www.pinnacle.com/img/payments/solid/sofort.png",
+            "https://www.pinnacle.com/img/payments/solid/bradesco.svg",
+            "https://www.pinnacle.com/img/payments/solid/boleto.svg",
+            "https://www.pinnacle.com/img/payments/solid/much-better.svg",
+            "https://www.pinnacle.com/img/payments/solid/webpay.svg",
+            "https://www.pinnacle.com/img/payments/solid/bitcoin.svg",
+            "https://www.pinnacle.com/img/payments/solid/internet-banking.png",
+            "https://www.pinnacle.com/img/payments/solid/jcb.png",
+            "https://www.pinnacle.com/img/payments/solid/neosurf.png",
+            "https://www.pinnacle.com/img/payments/solid/oxxo.png",
+            "https://www.pinnacle.com/img/payments/solid/pay4fun.png",
+            "https://www.pinnacle.com/img/payments/solid/interac-etransfer.png",
+            "https://www.pinnacle.com/img/payments/solid/AstroPay.png"
+          ],
+
         },
 
         methods:{
