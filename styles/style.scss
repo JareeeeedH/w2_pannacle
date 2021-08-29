@@ -253,6 +253,7 @@ main{
     background: #f1f3f7;
 
     .main-left{
+        display: none;
         color: $mainColor;
 
         h5{
@@ -267,12 +268,12 @@ main{
 
 
         .side-bar-top{
-            height: 12%;
+            height: 8%;
 
             h5{ padding: 5px;}
             .favorite{
                 margin-top: 12px;
-                white-space: nowrap;
+                // white-space: nowrap;
                 padding: 5px;
                 font-size: 5px;
                 border-radius: 3px;
@@ -325,7 +326,6 @@ main{
     }
 
     .main-middle{
-        border: 1px solid black;
         img{
             width: 100%;
         };
@@ -357,13 +357,13 @@ main{
             .gaming-main-title{
                 border: 1px solid black;
                 color: white;
-                background-color: $mainColor;
+                background-color: $lightBlue;
                 line-height: 13px;
                 border-bottom: 3px solid $colorGreen;
                 
                 h6{
                     font-size: 13px;
-                    padding: 0.25rem 1rem;
+                    padding: 0.5rem 1rem;
                     margin:0;
                 }
             }
@@ -461,6 +461,7 @@ main{
                 color: black;
                 display: flex;
                 padding: 0.35rem 0.35rem;
+                border-bottom: 1px solid $lightGrey;
 
                 .team-area{
                     
@@ -509,75 +510,117 @@ main{
                 .cent-area{
                     display: flex;
                     align-items: center;
+                    justify-content: space-around;
 
-                    :first-child{
-                        width: 50%;
+                    .cent{
+
+                        height: 100%;
+                        width: 35%;
                         display: flex;
                         flex-direction: column;
                         text-align: center;
-                        
-
                     }
-                    :nth-child(2){
-                        width: 50%;
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    :nth-child(3){
-                        width: 10%;
-                    }
-                    img{
-                        width: 50px;
-                    };
 
                     .cent-score{
+                        padding:0.25rem;
                         width: 100%;
-                        padding: 10px;
                         color: $colorBlue;
                         font-size: 8px;
                         font-weight: 600;
+                        height: 100%;
+                        border: 1px solid rgba(207, 207, 207, 0.7);
+                        border-radius: 3px;
+                        background: linear-gradient(180deg, rgba(255, 255, 255, 0.7),rgba(221, 220, 220, 0.7));
 
                         span{
                             width: 100%;
+                            display:inline-block;
+                            text-align: center;
+                        }
+
+                    }
+
+                    .arrow-container{
+                        width: 10%;
+                        height: 100%;
+
+                        .arrow-text{
+                            cursor: pointer;
+                            border: none;
+                            width: 100%;
+                            font-size: 10px;
+                            span{
+                                width: 100%;
+                                display:inline-block;
+                                text-align: center;
+                                font-size: 1px;
+                                color: grey;
+                            }
+                            
                         }
                     }
+
 
                 }
 
                 .big-small-area{
                     display: flex;
                     align-items: center;
+                    justify-content: space-between;
                     font-weight: 700;
                     color: $colorBlue;
-                    font-size: 8px;;
+                    font-size: 8px;
 
-                    :first-child{
-                        width:33%;
+                    .handicap {
                         display:flex;
                         flex-direction: column;
+                        width: 30%;
+                        height: 100%;
+
+                    .handicap-button{
+                        padding:0.25rem;
+                        width: 100%;
+                        color: $colorBlue;
+                        font-size: 8px;
+                        font-weight: 600;
+                        height: 100%;
+                        border: 1px solid rgba(207, 207, 207, 0.7);
+                        border-radius: 3px;
+                        background: linear-gradient(180deg, rgba(255, 255, 255, 0.7),rgba(221, 220, 220, 0.7));
+                       
+                            span{
+                                width: 100%;
+                                display:inline-block;
+                                text-align: center;
+                            }
+                        }
+
                     }
-                    :nth-child(2){
-                        width:33%;
-                        display:flex;
-                        flex-direction: column;
-                    }
-                    :nth-child(3){
-                        width: 5%;
+
+                    .arrow-container{
+                        width: 10%;
+                        height: 100%;
                         display:flex;
                         flex-direction: column;
                         justify-content: center;
-                        img{
+
+                        .arrow-text{
+                            cursor: pointer;
+                            border: none;
                             width: 100%;
+                            height: 100%;
+                            font-size: 10px;
+                            span{
+                                width: 100%;
+                                display:inline-block;
+                                text-align: center;
+                                font-size: 1px;
+                                color: grey;
+                            }
+                            
                         }
                     }
-                    :nth-child(4){
-                        display:flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        width:30%;
-                        color: black
 
-                    }
                 }
 
 
@@ -589,24 +632,24 @@ main{
     }
 
     .main-right{
+        display: none;
 
-        // AsiaWebsite Img
+        // Img Here
         .img-container{
             width: 100%;
             position:sticky;
-            top: 80%;
+            top: 85%;
             img{
                 max-width: 100%;;
             }
         }
 
         .wrapper-order{
-            height: 50vh;
-            border-radius: 3px;
             position:sticky;
-            top: 50px;
+            top: 30px;
 
             .order-header{
+                border-radius: 5px 5px 0 0 ;
                 padding: 0.5rem;
                 background-color: #2e3263;
                 color: white;
@@ -704,6 +747,87 @@ main{
 
 }
 
+.footer-links{
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    color: $lightBlue;
+    font-size: 12px;
+
+    .toTop{
+        width: 100%;
+        background: $colorBlue;
+        cursor: pointer;
+
+        button{
+            font-size: 12px;
+            width: 100%;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 3px;
+            background-color: $lightBlue;
+            color:white;
+        }
+    }
+
+    .link-Category{
+
+       flex: 1 1 150px;
+
+       :first-child{
+           font-size: 13px;
+           padding: 1rem 0;
+           font-weight: 800;
+       }
+
+        li{
+            color: $lightBlue;
+            padding: 0.25rem 0;
+        }
+    }
+}
+
+.age-warning{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 20vh;
+    text-align: center;
+    color: $mainColor;
+    font-size: 10px;
+
+    .min-age-photo{
+        width: 100%;
+        padding: 0.5rem 0;
+        img{
+            width: 10%;
+        }
+    }
+}
+
+.payments{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    ul{
+        display:flex;
+        flex-wrap: wrap;
+
+    }
+
+    ul li{
+        img{
+            width: 60px;
+            padding: 0.25rem 0.75rem;
+        }
+    }
+}
+
+
 @media screen and (max-width:768px) { 
     .menu {
         position: absolute;
@@ -730,7 +854,12 @@ main{
 
     #hamberger{
         display: block;
-    };
+    }
+
+    .toTop{
+        display: block;
+    }
+
 
   }
 
@@ -739,5 +868,19 @@ main{
     .category{
         display:none;
     }
+
+// <側邊攔>& <右邊下注單> 出現
+    main .main-left{
+        display: block;
+    }
+    main .main-right{
+        display: block;
+    }
+
+    .toTop{
+        display: none;
+    }
+
+
 
 }

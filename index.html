@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinnacle</title>
+    <title>線上運動博彩 | 最佳賠率  | Pinnacle（畢諾克）</title>
+    <link rel="icon" href="./favicon-16x16.webp" type="image/x-icon">
 
     <!-- Vue& bootstrap4 -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -107,8 +108,9 @@
         <div class="row">
 
 
-          <!-- 側邊欄 "d-none d-md-block" by Bootstrap -->
-          <div class="d-none d-md-block col-md-2 main-left">
+          <!-- 側邊欄 -->
+          <!-- d-none d-md-block  -->
+          <div class="col-md-2 main-left">
 
 
           <div class='side-bar-top'>
@@ -149,6 +151,7 @@
 
           </div>
 
+          <!-- 中間盤口欄位 -->
           <!-- Gaming Area -->
           <div class="col-md-7 main-middle">
 
@@ -196,6 +199,7 @@
                     </div>
                   </div>
 
+                  <!-- template -->
                   <div class="place-area">
                     <div class="col-md-3">
 
@@ -226,41 +230,52 @@
                     <!-- 讓分 -->
                     <div class="col-md-3 cent-area">
 
-                      <div>
-                        <div class='cent-score'>
+                      <div class='cent'>
+                        <button class='cent-score'>
                           <span>+1.5</span>
                           <span>1.925</span>
-                        </div>
+                        </button>
                       </div>
 
-                      <div>
-                        <div class='cent-score'>
+                      <div class='cent'>
+                        <button class='cent-score'>
                           <span>+1.5</span>
                           <span>1.925</span>
-                        </div>
+                        </button>
                       </div>
 
-                      <div>
-                        <img src="./arrow.png" alt="">
+                      <div class='arrow-container'>
+                        <button class='arrow-text'>
+                          <span>▲</span>
+                          <span>▼</span>
+                        </button>
                       </div>
 
                     </div>
 
 
+                    <!-- 大小分盤 -->
                     <div class="col-md-3 big-small-area">
 
-                        <div>
-                          <span>+1.5</span>
-                          <span>1.925</span>
+                        <div class='handicap'>
+                          <button class='handicap-button'>
+                            <span>+1.5</span>
+                            <span>1.925</span>
+                          </button>
                         </div>
   
-                        <div>
+                        <div class='handicap'>
+                         <button class='handicap-button'>
                           <span>+1.5</span>
                           <span>1.925</span>
+                         </button>
                         </div>
   
-                        <div>
-                          <img src="./arrow.png" alt="">
+                        <div class='arrow-container'>
+                          <button class='arrow-text'>
+                            <span>▲</span>
+                            <span>▼</span>
+                          </button>
                         </div>
 
                         <div>
@@ -271,36 +286,22 @@
 
                   </div>
 
-                </li>
-
-                <li>
-                  <div class="gamging-title">
-                    <div class="col-md-3">歐洲足協 - 歐羅巴聯賽</div>
-                    <div class="col-md-3">
-                      <span>1</span><span>X</span><span>2</span>
-                    </div>
-                    <div class="col-md-3">讓分盤</div>
-                    <div class="col-md-3">
-                      <span>大盤</span>
-                      <span>小盤</span>
-                    </div>
-                  </div>
-
-                  <div class="place-area">
+                  <!-- v-for -->
+                  <div class="place-area" v-for='item in playingList'>
                     <div class="col-md-3">
 
                       <div class='team-area'>
                         <div class="team-1">
-                          <span class='t1-name'>流浪者</span>
-                          <span class='t1-score'>6</span>
+                          <span class='t1-name'>{{ item.teams.team1 }}</span>
+                          <span class='t1-score'>{{ item.scores.score1}}</span>
                         </div>
 
                         <div class="team-2">
-                          <span class='t2-name'>洛杉磯湖人</span>
-                          <span class='t2-score'>3</span>
+                          <span class='t2-name'>{{ item.teams.team2 }}</span>
+                          <span class='t2-score'>{{ item.scores.score2}}</span>
                         </div>
 
-                        <div class='playing-time'>上半場-46'</div>
+                        <div class='playing-time'>{{item.times.time1}}</div>
 
                       </div>
 
@@ -308,146 +309,68 @@
 
                     <!-- 賠率 -->
                     <div class="col-md-3 odds-area">
-                      <div><button>1.560</button></div>
-                      <div><button>5.000</button></div>
-                      <div><button>1.242</button></div>
+                      <div><button>{{item.odds.rate1}}</button></div>
+                      <div><button>{{item.odds.rate2}}</button></div>
+                      <div><button>{{item.odds.rate3}}</button></div>
                     </div>
 
                     <!-- 讓分 -->
                     <div class="col-md-3 cent-area">
 
-                      <div>
-                        <div class='cent-score'>
-                          <span>+1.5</span>
-                          <span>1.925</span>
-                        </div>
+                      <div class='cent'>
+                        <button class='cent-score'>
+                          <span>{{item.cent.cent1[0]}}</span>
+                          <span>{{item.cent.cent1[1]}}</span>
+                        </button>
                       </div>
 
-                      <div>
-                        <div class='cent-score'>
-                          <span>+1.5</span>
-                          <span>1.925</span>
-                        </div>
+                      <div class='cent'>
+                        <button class='cent-score'>
+                          <span>{{item.cent.cent2[0]}}</span>
+                          <span>{{item.cent.cent2[1]}}</span>
+                        </button>
                       </div>
 
-                      <div>
-                        <img src="./arrow.png" alt="">
+                      <div class='arrow-container'>
+                        <button class='arrow-text'>
+                          <span>▲</span>
+                          <span>▼</span>
+                        </button>
                       </div>
 
                     </div>
 
 
+                    <!-- 大小分盤 -->
                     <div class="col-md-3 big-small-area">
 
-                        <div>
-                          <span>+1.5</span>
-                          <span>1.925</span>
+                        <div class='handicap'>
+                          <button class='handicap-button'>
+                            <span>{{item.bigSmall.rate1[0]}}</span>
+                            <span>{{item.bigSmall.rate1[1]}}</span>
+                          </button>
                         </div>
   
-                        <div>
-                          <span>+1.5</span>
-                          <span>1.925</span>
+                        <div class='handicap'>
+                         <button class='handicap-button'>
+                          <span>{{item.bigSmall.rate2[0]}}</span>
+                          <span>{{item.bigSmall.rate2[1]}}</span>
+                         </button>
                         </div>
   
-                        <div>
-                          <img src="./arrow.png" alt="">
+                        <div class='arrow-container'>
+                          <button class='arrow-text'>
+                            <span>▲</span>
+                            <span>▼</span>
+                          </button>
                         </div>
 
                         <div>
-                          +31>
+                          {{item.times.time2}}> 
                         </div>
 
                     </div>
 
-                  </div>
-
-                </li>
-
-                <li>
-                  <div class="gamging-title">
-                    <div class="col-md-3">歐洲足協 - 歐羅巴聯賽</div>
-                    <div class="col-md-3">
-                      <span>1</span><span>X</span><span>2</span>
-                    </div>
-                    <div class="col-md-3">讓分盤</div>
-                    <div class="col-md-3">
-                      <span>大盤</span>
-                      <span>小盤</span>
-                    </div>
-                  </div>
-
-                  <div class="place-area">
-                    <div class="col-md-3">
-
-                      <div class='team-area'>
-                        <div class="team-1">
-                          <span class='t1-name'>流浪者</span>
-                          <span class='t1-score'>6</span>
-                        </div>
-
-                        <div class="team-2">
-                          <span class='t2-name'>洛杉磯湖人</span>
-                          <span class='t2-score'>3</span>
-                        </div>
-
-                        <div class='playing-time'>上半場-46'</div>
-
-                      </div>
-
-                    </div>
-
-                    <!-- 賠率 -->
-                    <div class="col-md-3 odds-area">
-                      <div><button>1.560</button></div>
-                      <div><button>5.000</button></div>
-                      <div><button>1.242</button></div>
-                    </div>
-
-                    <!-- 讓分 -->
-                    <div class="col-md-3 cent-area">
-
-                      <div>
-                        <div class='cent-score'>
-                          <span>+1.5</span>
-                          <span>1.925</span>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div class='cent-score'>
-                          <span>+1.5</span>
-                          <span>1.925</span>
-                        </div>
-                      </div>
-
-                      <div>
-                        <img src="./arrow.png" alt="">
-                      </div>
-
-                    </div>
-
-
-                    <div class="col-md-3 big-small-area">
-
-                        <div>
-                          <span>+1.5</span>
-                          <span>1.925</span>
-                        </div>
-  
-                        <div>
-                          <span>+1.5</span>
-                          <span>1.925</span>
-                        </div>
-  
-                        <div>
-                          <img src="./arrow.png" alt="">
-                        </div>
-
-                        <div>
-                          +31>
-                        </div>
-
-                    </div>
 
                   </div>
 
@@ -459,14 +382,67 @@
 
             </div>
 
-          
+            <div class="footer-links">
 
+              <div class='toTop'>
+                <button @click='backToTop'>返回頁首</button>
+              </div>
+
+              <ul class='link-Category'>
+                <li class="link" v-for='link in PEInfo'>
+                  {{ link}}
+                </li>
+              </ul>
+
+              <ul class="link-Category">
+                <li class="link" v-for='link in AboutInfo'>
+                  {{ link}}
+                </li>
+              </ul>
+
+              <ul class="link-Category">
+                <li class="link" v-for='link in PolicyInfo'>
+                  {{ link}}
+                </li>
+              </ul>
+
+              <ul class="link-Category">
+                <li class="link" v-for='link in SourceInfo'>
+                  {{ link}}
+                </li>
+              </ul>
+
+              <ul class="link-Category">
+                <li class="link" v-for='link in SocialInfo'>
+                  {{ link}}
+                </li>
+              </ul>
+
+              
+            </div>
+
+            <div class="age-warning">
+              <div class="min-age-photo">
+                <img src="./min-age.svg" alt="">
+              </div>
+              <p>博彩可能讓人上癮。 請知所節制，謹慎下注。</p>
+            </div>
+
+            <div class="payments">
+              <ul>
+                <li v-for=' item in footerImgs'>
+                 <img :src="item" alt="" class='payment-icon'>
+                </li>
+              </ul>
+            </div>
+
+    
 
           </div>
 
-
-          <!-- 下注起來 -->
-          <div class="d-none d-md-block col-md-3 main-right">
+          <!-- 右邊下注單 -->
+          <!-- d-none d-md-block -->
+          <div class="col-md-3 main-right">
             <div class="wrapper-order">
 
               <div class="order-header">
@@ -521,10 +497,9 @@
             </div>
           </div>
 
-    
 
         </div>
-      </div>
+        </div>
       </main>
       
 
@@ -546,6 +521,55 @@
           activeNum: 0,
 
           checkbox: false,
+
+          playingList:[
+
+            {
+              teams:{team1:'費城七六人', team2:'勇士'}, 
+              scores: {score1:2, score2:1},
+              odds:{rate1:2.035, rate2: 2.122, rate3: 2.552},
+              cent:{cent1:[+1.500, 1.220], cent2:['+1.0', 1.900]},
+              bigSmall:{ rate1:[+1.1, 1.100], rate2:['+2.5', 2.900]},
+              times:{time1:"上半場-32'", time2: '+46'}
+            },
+
+            {
+              teams:{team1:'拿坡里', team2:'黑色後背包'}, 
+              scores: {score1:0, score2:1},
+              odds:{rate1:2.332, rate2: 3.222, rate3: 3.555},
+              cent:{cent1:[+2.220, 1.952], cent2:['+1.0', 1.950]},
+              bigSmall:{ rate1:[+1.5, 1.952], rate2:['+1.5', 0.900]},
+              times:{time1:"上半場-22'", time2: '+36'}
+            },
+
+            {
+              teams:{team1:'藍色風暴', team2:'紫色馬克杯'}, 
+              scores: {score1:2, score2:1},
+              odds:{rate1:1.352, rate2: 3.225, rate3: 3.558},
+              cent:{cent1:[+1.5, 1.952], cent2:['+1.0', 1.900]},
+              bigSmall:{ rate1:[+1.5, 1.952], rate2:['+1.5', 1.200]},
+              times:{time1:"下半場-22'", time2: '+46'}
+            },
+
+            {
+              teams:{team1:'藍白脫', team2:'高雄左營站'}, 
+              scores: {score1:1, score2:1},
+              odds:{rate1:2.532, rate2: 3.152, rate3: 3.558},
+              cent:{cent1:[+1.5, 1.952], cent2:['+1.0', 1.900]},
+              bigSmall:{ rate1:[+1.5, 1.952], rate2:['+2.5', 2.900]},
+              times:{time1:"下半場-50'", time2: '+16'}
+            },
+
+            {
+              teams:{team1:'新北', team2:'台北'}, 
+              scores: {score1:3, score2:1},
+              odds:{rate1:1.202, rate2: 1.228, rate3: 2.555},
+              cent:{cent1:[+1.5, 1.952], cent2:['+1.0', 1.900]},
+              bigSmall:{ rate1:[+1.5, 1.952], rate2:['+1.5', 1.200]},
+              times:{time1:"上半場-56''", time2: '+06'}
+            }
+
+          ],
 
           menuList: [
             {active:true, title:'體育博彩'},
@@ -638,6 +662,13 @@
         },
 
         methods:{
+
+          backToTop(){
+            console.log(window.scroll({
+              top: 0,
+              behavior: 'smooth'
+            }))
+          },
           // 取得隨機場次
           getRandom(){
 
