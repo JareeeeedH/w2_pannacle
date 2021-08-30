@@ -360,6 +360,7 @@ main{
                 background-color: $lightBlue;
                 line-height: 13px;
                 border-bottom: 3px solid $colorGreen;
+
                 
                 h6{
                     font-size: 13px;
@@ -447,11 +448,16 @@ main{
                     text-align: center;
                 }
                 :nth-child(4){
-                    display:flex;
-                    justify-content: flex-start;
+                    // display:flex;
+                    // justify-content: flex-start;
 
-                    :nth-child(2){
-                        margin-left: 30px;;
+                    // :nth-child(2){
+                    //     margin-left: 30px;
+                    // }
+                    span{
+                        display: inline-block;
+                        width: 35%;
+                        text-align: left;
                     }
                 }
                 
@@ -860,6 +866,9 @@ main{
         display: block;
     }
 
+    .mobile-none{
+        display: none !important;
+    }
 
   }
 
@@ -883,4 +892,21 @@ main{
 
 
 
+
+}
+
+
+
+
+
+// 768 to 1024
+@media (min-width:769px) and (max-width:1024px){
+    .middle-none{
+        display:  none !important;
+    }
+
+    .col-md-3 {
+        flex: 1;
+        max-width: 100%;
+    }
 }

@@ -192,8 +192,13 @@
                     <div class="col-md-3">
                       <span>1</span><span>X</span><span>2</span>
                     </div>
-                    <div class="col-md-3">讓分盤</div>
-                    <div class="col-md-3">
+
+                    <!-- 讓分盤小尺寸none -->
+                    <div class="col-md-3 middle-bigger mobile-none">讓分盤</div>
+
+
+                    <!-- 大小分盤:小/中尺寸none -->
+                    <div class="col-md-3 title-big-small mobile-none middle-none">
                       <span>大盤</span>
                       <span>小盤</span>
                     </div>
@@ -220,7 +225,7 @@
 
                     </div>
 
-                    <!-- 賠率 -->
+                    <!-- 輸贏 -->
                     <div class="col-md-3 odds-area">
                       <div><button>1.560</button></div>
                       <div><button>5.000</button></div>
@@ -228,7 +233,7 @@
                     </div>
 
                     <!-- 讓分 -->
-                    <div class="col-md-3 cent-area">
+                    <div class="col-md-3 cent-area mobile-none">
 
                       <div class='cent'>
                         <button class='cent-score'>
@@ -255,7 +260,7 @@
 
 
                     <!-- 大小分盤 -->
-                    <div class="col-md-3 big-small-area">
+                    <div class="col-md-3 big-small-area mobile-none middle-none">
 
                         <div class='handicap'>
                           <button class='handicap-button'>
@@ -287,6 +292,7 @@
                   </div>
 
                   <!-- v-for -->
+                  
                   <div class="place-area" v-for='item in playingList'>
                     <div class="col-md-3">
 
@@ -307,7 +313,7 @@
 
                     </div>
 
-                    <!-- 賠率 -->
+                    <!-- 輸贏 -->
                     <div class="col-md-3 odds-area">
                       <div><button>{{item.odds.rate1}}</button></div>
                       <div><button>{{item.odds.rate2}}</button></div>
@@ -315,7 +321,7 @@
                     </div>
 
                     <!-- 讓分 -->
-                    <div class="col-md-3 cent-area">
+                    <div class="col-md-3 cent-area mobile-none">
 
                       <div class='cent'>
                         <button class='cent-score'>
@@ -342,7 +348,7 @@
 
 
                     <!-- 大小分盤 -->
-                    <div class="col-md-3 big-small-area">
+                    <div class="col-md-3 big-small-area mobile-none middle-none">
 
                         <div class='handicap'>
                           <button class='handicap-button'>
