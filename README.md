@@ -8,3 +8,5 @@
 * 上方導覽列
 * 底部快速連結
 * 包含RWD
+
+＃＃＃＃# Demo: https://jareeeeedh.github.io/w2_pannacle/
