@@ -18,6 +18,7 @@ hr {
 body, html {
   width: 100%;
   height: 100%;
+  min-height: -webkit-fill-available;
 }
 
 header {
@@ -489,13 +490,13 @@ main .main-middle .playing-games .place-area .team-area .team-1, main .main-midd
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 500;
 }
 
 main .main-middle .playing-games .place-area .team-area .playing-time {
-  font-size: 10px;
-  font-weight: 800;
+  font-size: 5px;
+  font-weight: 600;
   color: #0fa810;
 }
 
@@ -520,8 +521,8 @@ main .main-middle .playing-games .place-area .odds-area button {
   padding: 0.25rem;
   width: 100%;
   color: #2f7ff0;
-  font-size: 8px;
-  font-weight: 600;
+  font-size: 3px;
+  font-weight: 400;
   height: 100%;
   border: 1px solid rgba(207, 207, 207, 0.7);
   border-radius: 3px;
@@ -557,8 +558,8 @@ main .main-middle .playing-games .place-area .cent-area .cent-score {
   padding: 0.25rem;
   width: 100%;
   color: #2f7ff0;
-  font-size: 8px;
-  font-weight: 600;
+  font-size: 3px;
+  font-weight: 400;
   height: 100%;
   border: 1px solid rgba(207, 207, 207, 0.7);
   border-radius: 3px;
@@ -599,12 +600,11 @@ main .main-middle .playing-games .place-area .big-small-area {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-weight: 700;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   color: #2f7ff0;
-  font-size: 8px;
+  font-size: 3px;
+  font-weight: 400;
 }
 
 main .main-middle .playing-games .place-area .big-small-area .handicap {
@@ -615,16 +615,17 @@ main .main-middle .playing-games .place-area .big-small-area .handicap {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 30%;
+  width: 40%;
   height: 100%;
+  margin: 0 5px;
 }
 
 main .main-middle .playing-games .place-area .big-small-area .handicap .handicap-button {
   padding: 0.25rem;
   width: 100%;
   color: #2f7ff0;
-  font-size: 8px;
-  font-weight: 600;
+  font-size: 3px;
+  font-weight: 400;
   height: 100%;
   border: 1px solid rgba(207, 207, 207, 0.7);
   border-radius: 3px;
@@ -639,7 +640,6 @@ main .main-middle .playing-games .place-area .big-small-area .handicap .handicap
 }
 
 main .main-middle .playing-games .place-area .big-small-area .arrow-container {
-  width: 10%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -828,6 +828,7 @@ main .main-right .wrapper-order .order-content .order-footer .order-button {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 150px;
           flex: 1 1 150px;
+  padding: 0 15px;
 }
 
 .footer-links .link-Category :first-child {
@@ -927,6 +928,12 @@ main .main-right .wrapper-order .order-content .order-footer .order-button {
   }
   .mobile-none {
     display: none !important;
+  }
+  main {
+    padding: 0;
+  }
+  main .main-middle {
+    padding: 0;
   }
 }
 
